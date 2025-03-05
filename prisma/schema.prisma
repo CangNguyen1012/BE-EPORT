@@ -25,3 +25,9 @@ model Language {
   languageCode String @unique
   languageName String 
 }
+
+model Country {
+  id          String @id @default(uuid())
+  countryCode String @unique
+  countryName String
+}
