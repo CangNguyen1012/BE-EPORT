@@ -17,13 +17,11 @@ model User {
   id        String @id @default(uuid())
   email     String @unique
   name      String
-  createdAt DateTime @default(now())
+  password  String
 }
 
 model Language {
   id           String @id @default(uuid())
   languageCode String @unique
   languageName String 
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
 }
