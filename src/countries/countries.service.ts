@@ -18,7 +18,11 @@ export class CountriesService {
     return this.prisma.country.findUnique({ where: { id } });
   }
 
-  async update(id: string, data: Prisma.CountryUpdateInput) {
+  async updatePartial(id: string, data: Prisma.CountryUpdateInput) {
+    return this.prisma.country.update({ where: { id }, data });
+  }
+
+  async updateFull(id: string, data: Prisma.CountryUpdateInput) {
     return this.prisma.country.update({ where: { id }, data });
   }
 

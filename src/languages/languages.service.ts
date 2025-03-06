@@ -18,7 +18,11 @@ export class LanguagesService {
     return this.prisma.language.findUnique({ where: { id } });
   }
 
-  async update(id: string, data: Prisma.LanguageUpdateInput) {
+  async updatePartial(id: string, data: Prisma.LanguageUpdateInput) {
+    return this.prisma.language.update({ where: { id }, data });
+  }
+
+  async updateFull(id: string, data: Prisma.LanguageUpdateInput) {
     return this.prisma.language.update({ where: { id }, data });
   }
 

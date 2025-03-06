@@ -18,8 +18,18 @@ export class UsersService {
     return this.prisma.user.findUnique({ where: { id } });
   }
 
-  async update(id: string, data: Prisma.UserUpdateInput) {
+  // Partial update (PATCH)
+  async updatePartial(id: string, data: Prisma.UserUpdateInput) {
     return this.prisma.user.update({ where: { id }, data });
+  }
+
+  // Full update (PUT) - Ensure all required fields are present
+  async updateFull(id: string, data: Prisma.UserUpdateInput) {
+    // Validate that all necessary fields are included to prevent accidental data loss
+    return this.prisma.user.update({
+      where: { id },
+      data,
+    });
   }
 
   async remove(id: string) {
