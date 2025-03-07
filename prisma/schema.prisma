@@ -32,3 +32,16 @@ model CustomerType {
   customerTypeName String @unique
   userGroupRank    Int
 }
+
+model JobMode {
+  id String @id @default(uuid())
+  jobModeCode String 
+  jobModeName String
+  isLoLo Boolean @default(false)
+  isCfsStuff Boolean @default(false)
+  isCfsUnstuff Boolean @default(false)
+  isCfsChange Boolean @default(false)
+  isServiceYard Boolean @default(false)
+  isServiceNoncont Boolean @default(false)
+  extraMode Int @default(0)
+}
