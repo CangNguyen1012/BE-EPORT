@@ -4,6 +4,8 @@ CREATE TABLE "User" (
     "email" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "password" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -13,6 +15,8 @@ CREATE TABLE "Language" (
     "id" TEXT NOT NULL,
     "languageCode" TEXT NOT NULL,
     "languageName" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "Language_pkey" PRIMARY KEY ("id")
 );
@@ -22,6 +26,8 @@ CREATE TABLE "Country" (
     "id" TEXT NOT NULL,
     "countryCode" TEXT NOT NULL,
     "countryName" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "Country_pkey" PRIMARY KEY ("id")
 );
@@ -32,6 +38,8 @@ CREATE TABLE "CustomerType" (
     "customerTypeCode" TEXT NOT NULL,
     "customerTypeName" TEXT NOT NULL,
     "userGroupRank" INTEGER NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "CustomerType_pkey" PRIMARY KEY ("id")
 );
@@ -48,6 +56,8 @@ CREATE TABLE "JobMode" (
     "isServiceYard" BOOLEAN NOT NULL DEFAULT false,
     "isServiceNoncont" BOOLEAN NOT NULL DEFAULT false,
     "extraMode" INTEGER NOT NULL DEFAULT 0,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "JobMode_pkey" PRIMARY KEY ("id")
 );
@@ -60,8 +70,26 @@ CREATE TABLE "SizeContainer" (
     "isoSizeType" TEXT NOT NULL,
     "cargoTypeCode" TEXT NOT NULL,
     "emptyCargoTypeCode" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "SizeContainer_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Refer" (
+    "id" TEXT NOT NULL,
+    "operationCode" VARCHAR(255) NOT NULL,
+    "refName" VARCHAR(255),
+    "applyDate" TIMESTAMP(3) NOT NULL,
+    "expireDate" TIMESTAMP(3) NOT NULL,
+    "rounding" VARCHAR(255) NOT NULL,
+    "moneyCredit" VARCHAR(255) NOT NULL,
+    "hourAdding" INTEGER NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Refer_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex

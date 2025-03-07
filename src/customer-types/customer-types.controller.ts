@@ -42,13 +42,11 @@ export class CustomerTypesController {
     name: 'skip',
     required: false,
     example: 0,
-    description: 'Number of customerTypes to skip',
   })
   @ApiQuery({
     name: 'take',
     required: false,
     example: 10,
-    description: 'Number of customerTypes to retrieve',
   })
   @ApiResponse({ status: 200, description: 'Customer-types found' })
   findAll(@Query('skip') skip = 0, @Query('take') take = 10) {
