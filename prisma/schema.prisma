@@ -45,3 +45,12 @@ model JobMode {
   isServiceNoncont Boolean @default(false)
   extraMode Int @default(0)
 }
+
+model SizeContainer {
+  id String @id @default(uuid())
+  operationCode String
+  localSizeType String
+  isoSizeType String
+  cargoTypeCode String
+  emptyCargoTypeCode String
+}

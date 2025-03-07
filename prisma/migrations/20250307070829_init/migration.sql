@@ -36,6 +36,34 @@ CREATE TABLE "CustomerType" (
     CONSTRAINT "CustomerType_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "JobMode" (
+    "id" TEXT NOT NULL,
+    "jobModeCode" TEXT NOT NULL,
+    "jobModeName" TEXT NOT NULL,
+    "isLoLo" BOOLEAN NOT NULL DEFAULT false,
+    "isCfsStuff" BOOLEAN NOT NULL DEFAULT false,
+    "isCfsUnstuff" BOOLEAN NOT NULL DEFAULT false,
+    "isCfsChange" BOOLEAN NOT NULL DEFAULT false,
+    "isServiceYard" BOOLEAN NOT NULL DEFAULT false,
+    "isServiceNoncont" BOOLEAN NOT NULL DEFAULT false,
+    "extraMode" INTEGER NOT NULL DEFAULT 0,
+
+    CONSTRAINT "JobMode_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "SizeContainer" (
+    "id" TEXT NOT NULL,
+    "operationCode" TEXT NOT NULL,
+    "localSizeType" TEXT NOT NULL,
+    "isoSizeType" TEXT NOT NULL,
+    "cargoTypeCode" TEXT NOT NULL,
+    "emptyCargoTypeCode" TEXT NOT NULL,
+
+    CONSTRAINT "SizeContainer_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
