@@ -7,6 +7,7 @@ import { CustomerTypesModule } from './customer-types/customer-types.module';
 import { JobModesModule } from './job-modes/job-modes.module';
 import { SizeContainersModule } from './size-containers/size-containers.module';
 import { RefersModule } from './refers/refers.module';
+import { CommoditiesModule } from './commodities/commodities.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { RefersModule } from './refers/refers.module';
     JobModesModule,
     SizeContainersModule,
     RefersModule,
+    CommoditiesModule,
   ],
   providers: [PrismaService],
 })

@@ -79,3 +79,11 @@ model Refer {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model Commodity {
+  id String @id @default(uuid())
+  commodityCode String @db.VarChar(255)
+  commodityName String @db.VarChar(255)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
