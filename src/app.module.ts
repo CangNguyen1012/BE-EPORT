@@ -10,6 +10,7 @@ import { RefersModule } from './refers/refers.module';
 import { CommoditiesModule } from './commodities/commodities.module';
 import { JobsModule } from './jobs/jobs.module';
 import { PortsModule } from './ports/ports.module';
+import { OperationsModule } from './operations/operations.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { PortsModule } from './ports/ports.module';
     CommoditiesModule,
     JobsModule,
     PortsModule,
+    OperationsModule,
   ],
   providers: [PrismaService],
 })

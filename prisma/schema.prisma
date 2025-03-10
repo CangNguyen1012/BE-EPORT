@@ -104,3 +104,14 @@ model Port {
   portCode String @db.VarChar(10)
   portName String @db.VarChar(50)
 }
+
+model Operation {
+  id             String  @id @default(uuid())
+  operationCode  String  @db.VarChar(10) @unique
+  operationName  String  @db.VarChar(255)
+  isEdo          Boolean @default(false) @db.Boolean
+  isActive       Boolean @default(false) @db.Boolean
+  edoNote        Boolean @default(false) @db.Boolean
+  isLocalForeign String? @db.VarChar(10)
+  moneyCredit    String? @db.VarChar(10)
+}
