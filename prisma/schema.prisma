@@ -8,82 +8,93 @@ datasource db {
 }
 
 model User {
-  id       String @id @default(uuid())
-  email    String @unique
-  name     String
-  password String
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  password  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model Language {
-  id           String @id @default(uuid())
-  languageCode String @unique
+  id           String   @id @default(uuid())
+  languageCode String   @unique
   languageName String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
 
 model Country {
-  id          String @id @default(uuid())
-  countryCode String @unique
+  id          String   @id @default(uuid())
+  countryCode String   @unique
   countryName String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model CustomerType {
-  id               String @id @default(uuid())
-  customerTypeCode String @unique
-  customerTypeName String @unique
+  id               String   @id @default(uuid())
+  customerTypeCode String   @unique
+  customerTypeName String   @unique
   userGroupRank    Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 }
 
 model JobMode {
-  id String @id @default(uuid())
-  jobModeCode String 
-  jobModeName String
-  isLoLo Boolean @default(false)
-  isCfsStuff Boolean @default(false)
-  isCfsUnstuff Boolean @default(false)
-  isCfsChange Boolean @default(false)
-  isServiceYard Boolean @default(false)
-  isServiceNoncont Boolean @default(false)
-  extraMode Int @default(0)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id               String   @id @default(uuid())
+  jobModeCode      String
+  jobModeName      String
+  isLoLo           Boolean  @default(false)
+  isCfsStuff       Boolean  @default(false)
+  isCfsUnstuff     Boolean  @default(false)
+  isCfsChange      Boolean  @default(false)
+  isServiceYard    Boolean  @default(false)
+  isServiceNoncont Boolean  @default(false)
+  extraMode        Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 }
 
 model SizeContainer {
-  id String @id @default(uuid())
-  operationCode String
-  localSizeType String
-  isoSizeType String
-  cargoTypeCode String
+  id                 String   @id @default(uuid())
+  operationCode      String
+  localSizeType      String
+  isoSizeType        String
+  cargoTypeCode      String
   emptyCargoTypeCode String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
 }
 
 model Refer {
-  id String @id @default(uuid())
-  operationCode String @db.VarChar(255)
-  refName String? @db.VarChar(255)
-  applyDate DateTime
-  expireDate DateTime
-  rounding String @db.VarChar(255)
-  moneyCredit String @db.VarChar(255)
-  hourAdding Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id            String   @id @default(uuid())
+  operationCode String   @db.VarChar(255)
+  refName       String?  @db.VarChar(255)
+  applyDate     DateTime
+  expireDate    DateTime
+  rounding      String   @db.VarChar(255)
+  moneyCredit   String   @db.VarChar(255)
+  hourAdding    Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 }
 
 model Commodity {
-  id String @id @default(uuid())
-  commodityCode String @db.VarChar(255)
-  commodityName String @db.VarChar(255)
+  id            String   @id @default(uuid())
+  commodityCode String   @db.VarChar(255)
+  commodityName String   @db.VarChar(255)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Job {
+  id        String   @id @default(uuid())
+  jobCode   String   @unique @db.VarChar(10)
+  jobName   String   @unique @db.VarChar(255)
+  isQuay    Boolean  @default(false) @db.Boolean
+  isYard    Boolean  @default(false) @db.Boolean
+  isGate    Boolean  @default(false) @db.Boolean
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
