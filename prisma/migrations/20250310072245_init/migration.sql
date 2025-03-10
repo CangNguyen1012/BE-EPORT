@@ -92,6 +92,40 @@ CREATE TABLE "Refer" (
     CONSTRAINT "Refer_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "Commodity" (
+    "id" TEXT NOT NULL,
+    "commodityCode" VARCHAR(255) NOT NULL,
+    "commodityName" VARCHAR(255) NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Commodity_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Job" (
+    "id" TEXT NOT NULL,
+    "jobCode" VARCHAR(10) NOT NULL,
+    "jobName" VARCHAR(255) NOT NULL,
+    "isQuay" BOOLEAN NOT NULL DEFAULT false,
+    "isYard" BOOLEAN NOT NULL DEFAULT false,
+    "isGate" BOOLEAN NOT NULL DEFAULT false,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Job_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Port" (
+    "id" TEXT NOT NULL,
+    "portCode" VARCHAR(10) NOT NULL,
+    "portName" VARCHAR(50) NOT NULL,
+
+    CONSTRAINT "Port_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
@@ -106,3 +140,9 @@ CREATE UNIQUE INDEX "CustomerType_customerTypeCode_key" ON "CustomerType"("custo
 
 -- CreateIndex
 CREATE UNIQUE INDEX "CustomerType_customerTypeName_key" ON "CustomerType"("customerTypeName");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Job_jobCode_key" ON "Job"("jobCode");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Job_jobName_key" ON "Job"("jobName");

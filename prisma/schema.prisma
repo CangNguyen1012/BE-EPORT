@@ -98,3 +98,9 @@ model Job {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model Port {
+  id       String @id @default(uuid())
+  portCode String @db.VarChar(10)
+  portName String @db.VarChar(50)
+}

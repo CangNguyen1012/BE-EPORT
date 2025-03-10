@@ -9,6 +9,7 @@ import { SizeContainersModule } from './size-containers/size-containers.module';
 import { RefersModule } from './refers/refers.module';
 import { CommoditiesModule } from './commodities/commodities.module';
 import { JobsModule } from './jobs/jobs.module';
+import { PortsModule } from './ports/ports.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { JobsModule } from './jobs/jobs.module';
     RefersModule,
     CommoditiesModule,
     JobsModule,
+    PortsModule,
   ],
   providers: [PrismaService],
 })
