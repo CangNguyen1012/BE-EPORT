@@ -107,11 +107,19 @@ model Port {
 
 model Operation {
   id             String  @id @default(uuid())
-  operationCode  String  @db.VarChar(10) @unique
+  operationCode  String  @unique @db.VarChar(10)
   operationName  String  @db.VarChar(255)
   isEdo          Boolean @default(false) @db.Boolean
   isActive       Boolean @default(false) @db.Boolean
   edoNote        Boolean @default(false) @db.Boolean
   isLocalForeign String? @db.VarChar(10)
   moneyCredit    String? @db.VarChar(10)
+}
+
+model Imo {
+  id          String @id @default(uuid())
+  imdgClass   String @db.VarChar(50)
+  un          String @db.VarChar(10)
+  description String @db.VarChar(255)
+  placard     String @db.VarChar(10)
 }

@@ -11,6 +11,7 @@ import { CommoditiesModule } from './commodities/commodities.module';
 import { JobsModule } from './jobs/jobs.module';
 import { PortsModule } from './ports/ports.module';
 import { OperationsModule } from './operations/operations.module';
+import { ImosModule } from './imos/imos.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { OperationsModule } from './operations/operations.module';
     JobsModule,
     PortsModule,
     OperationsModule,
+    ImosModule,
   ],
   providers: [PrismaService],
 })
