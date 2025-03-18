@@ -123,3 +123,19 @@ model Imo {
   description String @db.VarChar(255)
   placard     String @db.VarChar(10)
 }
+
+model Contact {
+  id                String   @id @default(uuid())
+  terminalCode      String   @db.VarChar(10)
+  contactName       String   @db.VarChar(255)
+  contactGroupName  String   @db.VarChar(10)
+  contactTel        String   @db.VarChar(50)
+  contactZaloID     String   @db.VarChar(50)
+  contactFacebookID String   @db.VarChar(50)
+  contactEmail      String   @db.VarChar(50)
+  contactWebsite    String   @db.VarChar(50)
+  contactWebsiteURL String   @db.VarChar(255)
+  constactAddress   String?
+  createdTime       DateTime @default(now())
+  updatedTime       DateTime @updatedAt
+}
